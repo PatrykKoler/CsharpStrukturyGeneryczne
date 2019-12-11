@@ -6,7 +6,7 @@ namespace _1_TypyGeneryczne
     {
         static void Main(string[] args)
         {
-            var kolejka = new KolejkaKolowa(pojemnosc: 3);
+            var kolejka = new KolejkaKolowaString(pojemnosc: 3);
 
             while (true)
             {
@@ -19,14 +19,18 @@ namespace _1_TypyGeneryczne
                     continue;
                 }
                 break;
-            }
+            }           
 
+            var suma = 0.0;
             Console.WriteLine("W naszej kolejce jest :");
 
             while (!kolejka.JestPusty)
             {
-                Console.WriteLine("\t\t" + kolejka.Czytaj());
+
+                suma += (double)kolejka.Czytaj();
+                
             }
+            Console.WriteLine(suma);
         }
     }
 }
