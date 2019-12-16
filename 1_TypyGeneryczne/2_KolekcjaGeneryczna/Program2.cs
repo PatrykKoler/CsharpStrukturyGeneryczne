@@ -7,17 +7,18 @@ namespace _2_KolekcjaGeneryczna
     {
         static void Main(string[] args)
         {
-            var liczby = new List<double>();
-            var pojemosc = -1;
-            while (true)
+            Queue<Pracownik> Kolejka = new Queue<Pracownik>();
+            Kolejka.Enqueue(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            Kolejka.Enqueue(new Pracownik { Imie = "Magda", Nazwisko = "Kowalska" });
+            Kolejka.Enqueue(new Pracownik { Imie = "Ala", Nazwisko = "Zajac" });
+            Kolejka.Enqueue(new Pracownik { Imie = "Marek", Nazwisko = "Paweł" });
+
+            while (Kolejka.Count > 0 )
             {
-                if (liczby.Capacity != pojemosc)
-                {
-                    pojemosc = liczby.Capacity;
-                    Console.WriteLine(pojemosc);
-                }
-                liczby.Add(1);
+                var pracownik = Kolejka.Dequeue();
+                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
             }
+            
         }
     }
 }
